@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      h1 {
+        color: rgb(9, 255, 0);
+        font-size: 50px;
+        text-align: center;
+      }
+      p {
+        color: rgb(9, 255, 0);
+        text-align: center;
+      }
+      body {
+        background-image: url(icon.png);
+        font-family: "Noto Sans", sans-serif;
+      }
+.rightclick {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.rightclick ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rightclick li {
+    padding: 8px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.rightclick li:hover {
+    background-color: #eee;
+}
+    </style>
+    <script>
+      document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+
+    const menu = document.getElementById("rightClick");
+    menu.style.display = "block";
+    menu.style.left = `${event.pageX}px`;
+    menu.style.top = `${event.pageY}px`;
+});
+
+document.addEventListener("click", function () {
+    const menu = document.getElementById("rightClick");
+    menu.style.display = "none";
+});
+
+    </script>
+  </head>
+  <body>
+        <div class="rightclick" id="rightClick">
+        <ul>
+            <li><a href="https://freakybob.site">Return to Freakybob.site</a></li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+    </div>
+   <h1> Warning </h1>
+    <p><strong>This page is for testing purposes only.</strong></p>
+    <p><strong> If you've come across this page on accident, you can safely leave.</strong></p>
+        <audio src="audio/test.mp3" autoplay loop></audio>  
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A place for Freakybob.">
+    <meta content="Freakyblog - Revival" property="og:title" />
+    <meta content="FreakyBlog has been revived!" property="og:description" />
+    <meta content="https://freakybob-team.github.io/Freakyblog/" property="og:url" />
+    <meta content="https://github.com/Freakybob-Team/Freakyblog/blob/main/icon.png?raw=true" property="og:image" />
+    <meta content="#006b79" data-react-helmet="true" name="theme-color" />
+    <title>Freakyblog - Blog Post</title>
+    <link rel="icon" type="image/x-icon" href="../icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-image: url('../images/bikinibottom.png');
+        background-color: rgb(3, 102, 102);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans", sans-serif;
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: rgb(1, 160, 200);
+    }
+    h1 {
+        text-align: center;
+        color: rgb(218, 203, 3);
+        font-size: 42px;
+        margin-top: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    h2 {
+        text-align: center;
+        color: rgb(225, 246, 4);
+    }
+    h3 {
+        text-align: center;
+        color: rgb(3, 246, 209);
+        font-size: 20px;
+    }
+    .post-content {
+        text-align: justify;
+        color: rgb(40, 248, 255);
+        margin: 20px;
+        padding: 20px;
+        background-color: rgba(155, 112, 184, 0.8);
+        border-radius: 8px;
+        max-width: 800px;
+        width: 90%;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(0, 96, 115, 0.533);
+        padding-top: 20px;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        transition: left 0.3s;
+        backdrop-filter: blur(10px);
+        filter: drop-shadow(2px 2px 6px rgba(200, 200, 200, 0.5));
+        border-width: 4px;
+        border-color: rgba(33, 65, 139, 0.321);
+        border-style: solid;
+        pointer-events: none;
+        z-index: 7;
+        
+    }
+    .sidebar a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+        box-shadow: inset 0 0 0 0 #54b3d6;
+        color: #54b3d6;
+        margin: 0 -.25rem;
+        padding: 1rem;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+    .sidebar a:hover {
+        box-shadow: inset 230px 0 0 0 #0d83ad;
+        color: white;
+    }
+    #menu-button {
+        height: 40px;
+        width: auto;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        background-color: rgba(33, 106, 120, 0.438);
+        color: white;
+        padding: 10px;
+        font-size: 13px;
+        cursor: pointer;
+        border: none;
+        border-radius: 12px;
+        transition: all 0.6s ease;
+    }
+    #menu-button:hover {
+        background-color: rgba(24, 175, 177, 0.529);
+    }
+    .comments {
+        z-index: auto;
+    }
+    @media screen and (max-width: 600px) {
+        h1 {
+            font-size: x-large;
+        }
+        
+        .post-content {
+            width: 250px;
+            font-size: 0.9em;
+            margin-left: 39px;
+        }
+        .posted {
+            font-size: 0.9em;
+        }
+
+    }
+</style>
+<body>
+
+    <button id="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <h2>Freakyblog</h2>
+        <a href="https://blog.freakybob.site">Home</a>
+        <a href="https://freakybob.site" target="_blank">Go to Freakybob.site</a>
+        <hr style="border-radius: 5px; border: 3px solid rgba(210, 17, 245, 0.6); margin: 10px 0; width: 90%;">
+        <h1 class="menu-blog-title" style="font-size: 1.4em; text-align: center; color: rgb(225, 246, 4);">The Blog Posts!</h1>
+        <a href="https://blog.freakybob.site/blogs/revival">Revival - 5quirre1</a>
+    </div>
+
+    <h1>Freakyblog Revival!!!</h1>
+    <p class="posted-on" style="color: hotpink; text-align: center;">Posted on December 5th!</p>
+    <h2 class="posted">Posted by <a href="https://github.com/5quirre1" style="color: hotpink">5quirre1</a> - Freakybob-Team</h2>
+
+    <div class="post-content">
+        <h3>FreakyBlog has been revived!</h3>
+        <p>It's been almost <b>3</b> months since Freakyblog has gotten an actual useful update. I would like to just say that stinks. So Freakybob-Team has decided to start making blog posts and update this website again! If Freakyblog starts to not get updates, I'll make sure to keep this website updated and full of new blog posts!!!! I hope you guys enjoy this website so much!!!!!!!</p>
+        <p>From, 5quirre1 <3</p>
+    </div>
+
+
+    <div  data-lyket-type="updown" data-lyket-id="comments" class="comments"></div>
+    <script src="https://utteranc.es/client.js"
+          repo="Freakybob-Team/Freakyblog"
+          issue-number="12"
+          theme="github-dark"
+          crossorigin="anonymous"
+          async>
+  </script>
+    <audio autoplay loop src="../audio/test.mp3"></audio>
+
+    <script>
+
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                sidebar.style.pointerEvents = "none";
+            } else {
+                sidebar.style.left = "0";
+                sidebar.style.pointerEvents = "auto";
+            }
+        }
+    </script>
+
+</body>
+</html>

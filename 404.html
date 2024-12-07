@@ -1,0 +1,101 @@
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="icon.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    body {
+      background-color: #000000;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Noto Sans", sans-serif;
+    }
+    .fade-in-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://github.com/Freakybob-Team/Freakyblog/blob/main/images/whale.png?raw=true');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 10s ease-in-out;
+      z-index: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+    h1 {
+      color: #009900;
+        font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+      z-index: 999;
+    }
+    p {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+    color: white;
+            z-index: 999;
+    }
+    .return {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
+            z-index: 999;
+      
+    }
+    a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+      
+}
+
+a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+<h1>You seem lost.</h1>
+<p>The page you're looking for can't be found.</p>
+  <p> If this page was directly linked on the website, make a <a href="https://github.com/Freakybob-Team/Freakyblog/issues/new">new issue</a> on the Github page. </p>
+  <p> In the meanwhile, you can sit here and relax. </p>
+  <div class="return">
+<a href="https://freakybob-team.github.io/Freakyblog/"><button>Go back to FreakyBlog</button></a>
+  </div>
+      <div class="fade-in-background"></div>
+      <audio src="audio/404.mp3" autoplay loop></audio>  
+</body>
+</html>
