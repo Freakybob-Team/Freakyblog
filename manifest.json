@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "FreakyBlog",
+    "short_name": "FreakyBlog",
+    "description": "A blogging website for Freakybob-Team!",
+    "start_url": "/",
+    "background_color": "#13b87a",
+    "theme_color": "#13b87a",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512"
+        }
+    ]
+}
