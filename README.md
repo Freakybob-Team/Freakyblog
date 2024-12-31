@@ -1,5 +1,5 @@
 # Freakyblog
-The Offical blog for Freakybob-Team!
+The Official blog for Freakybob-Team!
 
 This will blog:
 
