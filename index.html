@@ -16,6 +16,10 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
     body {
         background-image: url('images/bikinibottom.png');
         background-color: rgb(3, 102, 102);
@@ -80,25 +84,26 @@
     }
     
     .sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: rgba(0, 96, 115, 0.533);
-    padding-top: 20px;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    transition: left 0.3s;
-    backdrop-filter: blur(10px);
-    filter: drop-shadow(2px 2px 6px rgba(200, 200, 200, 0.5));
-    border-width: 4px;
-    border-color: rgba(33, 65, 139, 0.321);
-    border-style: solid; 
-    pointer-events: none;
-}
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(0, 96, 115, 0.533);
+        padding-top: 20px;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        transition: left 0.3s;
+        backdrop-filter: blur(10px);
+        filter: drop-shadow(2px 2px 6px rgba(200, 200, 200, 0.5));
+        border-width: 4px;
+        border-color: rgba(33, 65, 139, 0.321);
+        border-style: solid; 
+        pointer-events: none;
+        max-height: 100vh;
+    }
 
     .sidebar a {
         color: white;
@@ -158,7 +163,7 @@
     #menu-button:hover {
         background-color: rgba(24, 175, 177, 0.529);
     }
-     .thankyou a {
+    .thankyou a {
         text-decoration: none;
         color: rgb(222, 54, 255);
     }
@@ -167,17 +172,28 @@
         color: rgb(30, 201, 223);
     }
     .lastupdated {
-            font-size: 20px;
-            color: rgb(225, 246, 4);
-            text-align: center;
-        }
-        .greg {
-            margin-top: -10px ;
-            margin-left: 15px;
-            font-size: 15px;
-            text-align: center;
-            color: rgb(225, 246, 4);
-        }
+        font-size: 20px;
+        color: rgb(225, 246, 4);
+        text-align: center;
+    }
+    .greg {
+        margin-top: -10px ;
+        margin-left: 15px;
+        font-size: 15px;
+        text-align: center;
+        color: rgb(225, 246, 4);
+    }
+iframe {
+    width: 95%;
+    height: 60%;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+    border-radius: 8px;
+}
+
+
+
     @media screen and (max-width: 600px) {
         h1 {
             font-size: x-large;
@@ -216,40 +232,36 @@
         <a href="https://blog.freakybob.site">Home</a>
         <a href="https://freakybob.site" target="_blank">Go to Freakybob.site</a>
         <hr style="border-radius: 5px; border: 3px solid rgba(210, 17, 245, 0.6); margin: 10px 0; width: 90%;">
-        <h1 class="menu-blog-title" style="font-size: 1.4em; text-align: center; color: rgb(225, 246, 4);">The Blog Posts! (newest-oldest)</h1>
-        <a href="https://blog.freakybob.site/blogs/delisted">Delisting of FreakyExtension from Chrome - Wish</a>
-        <a href="https://blog.freakybob.site/blogs/freakybob.site-hacking">What happened - mpax235</a> 
-        <a href="https://blog.freakybob.site/blogs/where-we've-been">Apologizing - Wish</a>
-        <a href="https://blog.freakybob.site/blogs/revival">Revival - 5quirre1</a>
+    
+        <iframe src="/blogs/blog-posts.html"></iframe>
+
     </div>
     
+    <h1>Welcome to the Freakyblog!</h1>
+    <small><h2 class="thankyou" style="color:rgb(112, 200, 200); margin-top: -20px;">Thank you <a href="https://pikidiary.lol/@jax" target="_blank">Jax</a> for helping with the website!!! ( ´∀`)</h2></small>
+    <h2>What is Freakyblog?</h2>
 
-        <h1>Welcome to the Freakyblog!</h1>
-        <small><h2 class="thankyou" style="color:rgb(112, 200, 200); margin-top: -20px;">Thank you <a href="https://pikidiary.lol/@jax" target="_blank">Jax</a> for helping with the website!!! ( ´∀`)</h2></small>
-        <h2>What is Freakyblog?</h2>
-
-        <div class="main-note">
-            <h3>Freakyblog is a blogging site for Freakybob-Team.</h3>
-            <p>Freakybob-Team is a team of people who are working on a number of projects that people may want more info or updates about. Our goal is to blog major updates and community achievements!</p>
-            <p>From <a href="https://github.com/5quirre1">5quirre1</a> <3</p>
-        </div>
-        <p class="lastupdated">Last updated:</p>
-        <p class="greg">12/23/24!!!!!</p>
-<audio autoplay loop src="audio/test.mp3"></audio>
+    <div class="main-note">
+        <h3>Freakyblog is a blogging site for Freakybob-Team.</h3>
+        <p>Freakybob-Team is a team of people who are working on a number of projects that people may want more info or updates about. Our goal is to blog major updates and community achievements!</p>
+        <p>From <a href="https://github.com/5quirre1">5quirre1</a> <3</p>
+    </div>
+    <p class="lastupdated">Last updated:</p>
+    <p class="greg">12/23/24!!!!!</p>
+    <audio autoplay loop src="audio/test.mp3"></audio>
+    
     <script>
-
         function toggleMenu() {
-    var sidebar = document.getElementById("sidebar");
+            var sidebar = document.getElementById("sidebar");
 
-    if (sidebar.style.left === "0px") {
-        sidebar.style.left = "-250px";
-        sidebar.style.pointerEvents = "none"; 
-    } else {
-        sidebar.style.left = "0";
-        sidebar.style.pointerEvents = "auto"; 
-    }
-}
-
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                sidebar.style.pointerEvents = "none"; 
+            } else {
+                sidebar.style.left = "0";
+                sidebar.style.pointerEvents = "auto"; 
+            }
+        }
     </script>
 
 </body>
