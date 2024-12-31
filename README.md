@@ -1,4 +1,18 @@
 # Freakyblog
-The official blog for https://freakybob.site!
- ![Screenshot 2024-12-05 8 32 04 AM](https://github.com/user-attachments/assets/22cfe335-0f05-406d-b8a8-ba4197964f1b)
-![Screenshot 2024-12-05 8 33 03 AM](https://github.com/user-attachments/assets/b2dd34e9-4ee1-4cdd-afe7-44cba73a88d7)
+The Offical blog for Freakybob-Team!
+
+This will blog:
+
+> Achivements
+
+> Major updates
+
+and more!
+
+![image](https://github.com/user-attachments/assets/d8bb0786-ea02-4ce3-aeae-b8cd7115cb8e)
+
+
+
+![image](https://github.com/user-attachments/assets/d4cb5d38-2447-446c-a5f0-081e32b9ee23)
+
+
