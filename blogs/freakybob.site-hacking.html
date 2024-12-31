@@ -17,6 +17,7 @@
 </head>
 <style>
     body {
+        overflow-x: hidden;
         background-image: url('../images/bikinibottom.png');
         background-color: rgb(3, 102, 102);
         background-size: cover;
@@ -27,12 +28,10 @@
         padding: 0;
         font-family: "Noto Sans", sans-serif;
         min-height: 100vh;
-        min-width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: relative;
         color: rgb(1, 160, 200);
     }
     h1 {
@@ -79,9 +78,12 @@
         border-width: 4px;
         border-color: rgba(33, 65, 139, 0.321);
         border-style: solid;
+        z-index: 0;
         pointer-events: none;
-        z-index: 7;
-        
+    }
+    .sidebar.open {
+        pointer-events: all;
+        left: 0;
     }
     .sidebar a {
         color: white;
@@ -119,23 +121,36 @@
     #menu-button:hover {
         background-color: rgba(24, 175, 177, 0.529);
     }
-    .comments {
-        z-index: auto;
+    iframe {
+        width: 95%;
+        height: 60%;
+        border: none;
+        overflow: hidden;
+        border-radius: 8px;
     }
-    @media screen and (max-width: 600px) {
-        h1 {
-            font-size: x-large;
+    @media screen and (max-width: 768px) {
+        body {
+            padding: 0 10px;
         }
-        
-        .post-content {
-            width: 250px;
-            font-size: 0.9em;
-            margin-left: 39px;
+        h1 {
+            font-size: 32px;
         }
         .posted {
             font-size: 0.9em;
         }
-
+        .post-content {
+            width: 60%;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+        #menu-button {
+            top: 15px;
+            right: 10px;
+            font-size: 18px;
+        }
+        iframe {
+            height: 50%;
+        }
     }
 </style>
 <body>
@@ -147,10 +162,7 @@
         <a href="https://blog.freakybob.site">Home</a>
         <a href="https://freakybob.site" target="_blank">Go to Freakybob.site</a>
         <hr style="border-radius: 5px; border: 3px solid rgba(210, 17, 245, 0.6); margin: 10px 0; width: 90%;">
-        <h1 class="menu-blog-title" style="font-size: 1.4em; text-align: center; color: rgb(225, 246, 4);">The Blog Posts!</h1>
-        <a href="https://blog.freakybob.site/blogs/revival">Revival - 5quirre1</a>
-        <a href="https://blog.freakybob.site/blogs/where-we've-been">Apologizing - Wish13yt</a>
-        <a href="https://blog.freakybob.site/blogs/freakybob.site-hacking">What happened - mpax235</a>
+        <iframe src="/blogs/blog-posts.html"></iframe>
     </div>
 
     <h1>The Freakybob.site Hacking Incident...</h1>
@@ -169,8 +181,7 @@
         <p><em>Written by <a href="https://github.com/mpax235" style="color: paleturquoise;">mpax235</a></em></p>
     </div>
 
-
-    <div  data-lyket-type="updown" data-lyket-id="comments" class="comments"></div>
+    <div data-lyket-type="updown" data-lyket-id="comments" class="comments"></div>
     <script src="https://utteranc.es/client.js"
           repo="Freakybob-Team/Freakyblog"
           issue-number="12"
@@ -181,19 +192,19 @@
     <audio autoplay loop src="../audio/test.mp3"></audio>
 
     <script>
-
         function toggleMenu() {
             var sidebar = document.getElementById("sidebar");
 
             if (sidebar.style.left === "0px") {
                 sidebar.style.left = "-250px";
-                sidebar.style.pointerEvents = "none";
+                sidebar.style.pointerEvents = "none"; 
             } else {
                 sidebar.style.left = "0";
-                sidebar.style.pointerEvents = "auto";
+                sidebar.style.pointerEvents = "auto"; 
             }
         }
     </script>
 
 </body>
 </html>
+
