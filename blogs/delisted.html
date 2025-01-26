@@ -80,7 +80,7 @@
         border-color: rgba(33, 65, 139, 0.321);
         border-style: solid;
         pointer-events: none;
-        z-index: 7;
+        z-index: 999;
         
     }
     .sidebar a {
@@ -96,6 +96,7 @@
         margin: 0 -.25rem;
         padding: 1rem;
         transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        z-index: 999;
     }
     .sidebar a:hover {
         box-shadow: inset 230px 0 0 0 #0d83ad;
@@ -115,6 +116,7 @@
         border: none;
         border-radius: 12px;
         transition: all 0.6s ease;
+        z-index: 999;
     }
     #menu-button:hover {
         background-color: rgba(24, 175, 177, 0.529);
@@ -129,6 +131,25 @@
     overflow: hidden;
     border-radius: 8px;
     border-radius: 8px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+    z-index: 998;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: all;
 }
     @media screen and (max-width: 600px) {
         h1 {
@@ -147,7 +168,7 @@
     }
 </style>
 <body>
-
+    <div class="overlay" id="overlay"></div>
     <button id="menu-button" onclick="toggleMenu()">☰</button>
 
     <div class="sidebar" id="sidebar">
@@ -158,7 +179,7 @@
         <iframe src="/blogs/blog-posts.html"></iframe>
     </div>
 
-    <h1>Freakyblog Revival!!!</h1>
+    <h1>delisting</h1>
     <p class="posted-on" style="color: hotpink; text-align: center;">Posted on December 30th!</p>
     <h2 class="posted">Posted by <a href="https://github.com/Wish13yt" style="color: hotpink">Wish</a> - Freakybob-Team</h2>
 
@@ -182,17 +203,20 @@
 
     <script>
 
-        function toggleMenu() {
-            var sidebar = document.getElementById("sidebar");
+function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-            if (sidebar.style.left === "0px") {
-                sidebar.style.left = "-250px";
-                sidebar.style.pointerEvents = "none";
-            } else {
-                sidebar.style.left = "0";
-                sidebar.style.pointerEvents = "auto";
-            }
+        if (sidebar.style.left === '0px') {
+            sidebar.style.left = '-250px';
+            overlay.classList.remove('show'); 
+            sidebar.style.pointerEvents = 'none';
+        } else {
+            sidebar.style.left = '0px';
+            overlay.classList.add('show');
+            sidebar.style.pointerEvents = 'auto';
         }
+    }
     </script>
 </body>
 </html>
