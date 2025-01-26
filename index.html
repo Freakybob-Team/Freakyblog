@@ -103,9 +103,11 @@
         border-style: solid; 
         pointer-events: none;
         max-height: 100vh;
+        z-index: 999;
     }
 
     .sidebar a {
+        
         color: white;
         padding: 12px 16px;
         text-decoration: none;
@@ -159,6 +161,7 @@
         border: none;
         border-radius: 12px;
         transition: all 0.6s ease;
+        z-index: 1000;
     }
     #menu-button:hover {
         background-color: rgba(24, 175, 177, 0.529);
@@ -193,10 +196,28 @@ iframe {
 }
 
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+    z-index: 998;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
 
     @media screen and (max-width: 600px) {
         h1 {
-            font-size: x-large;
+            font-size: 2em;
         }
         .thankyou {
             text-align: center;
@@ -224,6 +245,7 @@ iframe {
 </style>
 
 <body>
+    <div class="overlay" id="overlay"></div>
 
     <button id="menu-button" onclick="toggleMenu()">☰</button>
 
@@ -247,21 +269,24 @@ iframe {
         <p>From <a href="https://github.com/5quirre1">5quirre1</a> <3</p>
     </div>
     <p class="lastupdated">Last updated:</p>
-    <p class="greg">12/30/24!!!!!</p>
+    <p class="greg">1/26/25!!!!!</p>
     <audio autoplay loop src="audio/test.mp3"></audio>
     
     <script>
         function toggleMenu() {
-            var sidebar = document.getElementById("sidebar");
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-            if (sidebar.style.left === "0px") {
-                sidebar.style.left = "-250px";
-                sidebar.style.pointerEvents = "none"; 
-            } else {
-                sidebar.style.left = "0";
-                sidebar.style.pointerEvents = "auto"; 
-            }
+        if (sidebar.style.left === '0px') {
+            sidebar.style.left = '-250px';
+            overlay.classList.remove('show'); 
+            sidebar.style.pointerEvents = 'none';
+        } else {
+            sidebar.style.left = '0px';
+            overlay.classList.add('show');
+            sidebar.style.pointerEvents = 'auto';
         }
+    }
     </script>
 <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
