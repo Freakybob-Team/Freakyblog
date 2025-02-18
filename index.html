@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A place for Freakybob.">
@@ -12,11 +13,13 @@
     <link rel="icon" type="image/x-icon" href="icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="manifest" href="manifest.json">
 </head>
 <style>
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
 
@@ -39,6 +42,7 @@
         position: relative;
         color: rgb(1, 160, 200);
     }
+
     h1 {
         text-align: center;
         color: rgb(218, 203, 3);
@@ -46,23 +50,28 @@
         margin-top: 30px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
+
     h2 {
         text-align: center;
         color: rgb(225, 246, 4);
     }
+
     h3 {
         text-align: center;
         color: rgb(3, 246, 209);
         font-size: 20px;
     }
+
     #para1 {
         text-align: center;
         color: yellow;
     }
+
     #para2 {
         text-align: center;
         color: rgb(3, 246, 209);
     }
+
     button {
         margin-top: 12px;
         padding: 15px 25px;
@@ -77,17 +86,18 @@
         max-width: 220px;
         width: 100%;
     }
+
     button:hover {
         background-color: rgb(8, 111, 126);
         transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 6px 8px rgba(3,102,102,255);
+        box-shadow: 0 6px 8px rgba(3, 102, 102, 255);
     }
-    
+
     .sidebar {
         position: fixed;
         top: 0;
-        left: -250px;
-        width: 250px;
+        left: -670px;
+        width: 320px;
         height: 100%;
         background-color: rgba(0, 96, 115, 0.533);
         padding-top: 20px;
@@ -100,31 +110,31 @@
         filter: drop-shadow(2px 2px 6px rgba(200, 200, 200, 0.5));
         border-width: 4px;
         border-color: rgba(33, 65, 139, 0.321);
-        border-style: solid; 
+        border-style: solid;
         pointer-events: none;
         max-height: 100vh;
         z-index: 999;
     }
 
     .sidebar a {
-        
-        color: white;
+        color: #54b3d6;
         padding: 12px 16px;
         text-decoration: none;
         font-size: 20px;
         margin-bottom: 10px;
         border-radius: 6px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
         box-shadow: inset 0 0 0 0 #54b3d6;
-        color: #54b3d6;
         margin: 0 -.25rem;
         padding: 1rem;
-        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     }
+
     .sidebar a:hover {
-        box-shadow: inset 230px 0 0 0 #0d83ad;
+        box-shadow: inset 215px 0 0 0 #0d83ad;
         color: white;
     }
+
+
     .main-note {
         background-color: rgba(155, 112, 184, 0.8);
         padding: 20px;
@@ -133,20 +143,25 @@
         max-width: 800px;
         border-radius: 8px;
     }
+
     .main-note h3 {
         color: rgb(111, 208, 228);
     }
+
     .main-note p {
         text-align: justify;
         color: rgb(255, 255, 255);
     }
-    .main-note a {      
+
+    .main-note a {
         text-decoration: none;
         color: rgb(237, 172, 255);
     }
+
     .main-note a:hover {
         text-decoration: underline;
     }
+
     #menu-button {
         height: 40px;
         width: auto;
@@ -163,83 +178,120 @@
         transition: all 0.6s ease;
         z-index: 1000;
     }
+
     #menu-button:hover {
         background-color: rgba(24, 175, 177, 0.529);
     }
+
     .thankyou a {
         text-decoration: none;
         color: rgb(222, 54, 255);
     }
+
     .thankyou a:hover {
         text-decoration: underline;
         color: rgb(30, 201, 223);
     }
+
     .lastupdated {
         font-size: 20px;
         color: rgb(225, 246, 4);
         text-align: center;
     }
+
     .greg {
-        margin-top: -10px ;
+        margin-top: -10px;
         margin-left: 15px;
         font-size: 15px;
         text-align: center;
         color: rgb(225, 246, 4);
     }
-iframe {
-    width: 95%;
-    height: 60%;
-    border: none;
-    overflow: hidden;
-    border-radius: 8px;
-    border-radius: 8px;
-}
+
+    iframe {
+        width: 97%;
+        height: 60%;
+        border: none;
+        border-radius: 8px;
+        overflow: auto;
+    }
 
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
-    z-index: 998;
-}
 
-.overlay.show {
-    opacity: 1;
-    pointer-events: all;
-}
+    ::-webkit-scrollbar {
+        width: 10px;
+        background-color: rgba(47, 8, 79, 0.767);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(70, 25, 98, 0.7);
+        border-radius: 5px;
+        border: 2px solid rgba(26, 105, 101, 0.6);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(96, 6, 93, 0.8);
+        border: 2px solid rgba(50, 72, 169, 0.8);
+    }
+
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(13, 156, 227, 0.1);
+        border-radius: 5px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+        z-index: 998;
+    }
+
+    .overlay.show {
+        opacity: 1;
+        pointer-events: all;
+    }
 
     @media screen and (max-width: 600px) {
         h1 {
             font-size: 2em;
         }
+
         .thankyou {
             text-align: center;
             margin-left: 19px;
             font-size: 0.9em;
         }
+
         .main-note {
-            margin-left: 18px;
+            font-size: 0.9em;
             height: 280px;
         }
+
         .lastupdated {
-            margin-top: -10px ;
+            margin-top: -10px;
             font-size: 15px;
             color: rgb(225, 246, 4);
             text-align: center;
         }
+
         .greg {
-            margin-top: -10px ;
+            margin-top: -10px;
             margin-left: 15px;
             font-size: 15px;
             text-align: center;
             color: rgb(225, 246, 4);
+        }
+
+        #sidebar {
+            width: 280px;
         }
     }
 </style>
@@ -254,47 +306,54 @@ iframe {
         <a href="https://blog.freakybob.site">Home</a>
         <a href="https://freakybob.site" target="_blank">Go to Freakybob.site</a>
         <hr style="border-radius: 5px; border: 3px solid rgba(210, 17, 245, 0.6); margin: 10px 0; width: 90%;">
-    
+
         <iframe src="/blogs/blog-posts.html"></iframe>
 
     </div>
-    
+
     <h1>Welcome to the Freakyblog!</h1>
-    <small><h2 class="thankyou" style="color:rgb(112, 200, 200); margin-top: -20px;">Thank you <a href="https://pikidiary.lol/@jax" target="_blank">Jax</a> for helping with the website!!! ( ´∀`)</h2></small>
+    <small>
+        <h2 class="thankyou" style="color:rgb(112, 200, 200); margin-top: -20px;">Thank you <a
+                href="https://pikidiary.lol/@jax" target="_blank">Jax</a> for helping with the website!!! ( ´∀`)</h2>
+    </small>
     <h2>What is Freakyblog?</h2>
 
     <div class="main-note">
         <h3>Freakyblog is a blogging site for Freakybob-Team.</h3>
-        <p>Freakybob-Team is a team of people who are working on a number of projects that people may want more info or updates about. Our goal is to blog major updates and community achievements!</p>
-        <p>From <a href="https://github.com/5quirre1">5quirre1</a> <3</p>
+        <p>Freakybob-Team is a team of people who are working on a number of projects that people may want more info or
+            updates about. Our goal is to blog major updates and community achievements!</p>
+        <p>From <a href="https://github.com/5quirre1">5quirre1</a>
+            <3</p>
     </div>
     <p class="lastupdated">Last updated:</p>
     <p class="greg">2/17/25!!!!!</p>
     <audio autoplay loop src="audio/test.mp3"></audio>
-    
+
     <script>
         function toggleMenu() {
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
 
-        if (sidebar.style.left === '0px') {
-            sidebar.style.left = '-250px';
-            overlay.classList.remove('show'); 
-            sidebar.style.pointerEvents = 'none';
-        } else {
-            sidebar.style.left = '0px';
-            overlay.classList.add('show');
-            sidebar.style.pointerEvents = 'auto';
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-310px';
+                overlay.classList.remove('show');
+                sidebar.style.pointerEvents = 'none';
+            } else {
+                sidebar.style.left = '0px';
+                overlay.classList.add('show');
+                sidebar.style.pointerEvents = 'auto';
+            }
+            overlay.addEventListener('click', () => {
+                toggleMenu();
+            });
         }
-    }
     </script>
-<script>
-    if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('pwabuilder-sw.js')
-    }
-  </script>
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('pwabuilder-sw.js')
+        }
+    </script>
 </body>
+
 </html>
-
-
 
