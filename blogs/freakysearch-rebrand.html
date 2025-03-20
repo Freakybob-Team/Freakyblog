@@ -1,0 +1,311 @@
+<html lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A place for Freakybob.">
+    <meta content="g" property="og:title">
+    <meta content="g" property="og:description">
+    <meta content="https://github.com/Freakybob-Team/Freakyblog/blob/main/icon.png?raw=true" property="og:image">
+    <meta content="#006b79" data-react-helmet="true" name="theme-color">
+    <title>FreakyBlog - freakysearch-rebrand.html</title>
+    <link rel="icon" type="image/x-icon" href="../icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+    
+  <style>
+    body {
+      background-image: url('../images/bikinibottom.png');
+      background-color: rgb(3, 102, 102);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans", sans-serif;
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: rgb(1, 160, 200);
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(218, 203, 3);
+      font-size: 42px;
+      margin-top: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(225, 246, 4);
+    }
+
+    h3 {
+      text-align: center;
+      color: rgb(3, 246, 209);
+      font-size: 20px;
+    }
+
+    .post-content {
+      text-align: justify;
+      color: rgb(40, 248, 255);
+      margin: 20px;
+      padding: 20px;
+      background-color: rgba(62, 28, 85, 0.8);
+      border-radius: 8px;
+      max-width: 800px;
+      width: 90%;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -670px;
+      width: 320px;
+      height: 100%;
+      background-color: rgba(0, 96, 115, 0.533);
+      padding-top: 20px;
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      transition: left 0.3s;
+      backdrop-filter: blur(10px);
+      filter: drop-shadow(2px 2px 6px rgba(200, 200, 200, 0.5));
+      border-width: 4px;
+      border-color: rgba(33, 65, 139, 0.321);
+      border-style: solid;
+      pointer-events: none;
+      max-height: 100vh;
+      z-index: 999;
+    }
+
+    .sidebar a {
+      color: #54b3d6;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+      box-shadow: inset 0 0 0 0 #54b3d6;
+      margin: 0 -.25rem;
+      padding: 1rem;
+    }
+
+    .sidebar a:hover {
+      box-shadow: inset 215px 0 0 0 #0d83ad;
+      color: white;
+    }
+
+
+    #menu-button {
+          height: 40px;
+          width: auto;
+          position: absolute;
+          top: 20px;
+          right: 10px;
+          background-color: rgba(33, 106, 120, 0.438);
+          color: white;
+          padding: 10px;
+          font-size: 13px;
+          cursor: pointer;
+          border: none;
+          border-radius: 12px;
+          transition: all 0.6s ease;
+          z-index: 1000;
+      }
+
+      #menu-button:hover {
+        background-color: rgb(8, 111, 126);
+          transform: translateY(-3px) scale(1.05);
+          box-shadow: 0 6px 8px rgba(3, 102, 102, 255);
+      }
+
+
+
+    iframe {
+      width: 95%;
+      height: 60%;
+      border: none;
+      overflow: hidden;
+      border-radius: 8px;
+      border-radius: 8px;
+    }
+
+
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+      z-index: 998;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .post-content a {
+      color: rgb(245, 28, 136);
+      text-decoration: none;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .post-content a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      color: rgb(128, 84, 135);
+      background-color: #e74c3c;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    .post-content a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+
+
+
+
+
+
+    .posted a {
+      color: hotpink;
+      text-decoration: none;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .posted a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      color: hotpink;
+      background-color: #3ce7b9;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    .posted a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+
+
+    .post-content img {
+      max-width: 70%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 0 10px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .posted {
+        font-size: 0.9em;
+      }
+
+      .post-content {
+        width: 60%;
+        font-size: 1em;
+        margin: 10px 0;
+      }
+
+      #menu-button {
+        top: 15px;
+        right: 10px;
+        font-size: 18px;
+      }
+
+      iframe {
+        height: 50%;
+      }
+
+      #sidebar {
+        width: 280px;
+      }
+    }
+  </style></head>
+  
+
+  <body>
+    <button id="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+      <h2>Freakyblog</h2>
+      <a href="https://blog.freakybob.site">Home</a>
+      <a href="https://freakybob.site" target="_blank">Go to Freakybob.site</a>
+      <hr style="border-radius: 5px; border: 3px solid rgba(210, 17, 245, 0.6); margin: 10px 0; width: 90%;">
+      <iframe class="goinginsane" src="https://blog.freakybob.site/blogs/blog-posts.html"></iframe>
+    </div>
+
+    <h1>Rebrand of FreakySearch</h1>
+    <p class="posted-on" style="color: hotpink; text-align: center;">
+      Posted on 3/20/2025</p>
+    <h2 class="posted"><span style="background-color: rgb(3, 102, 102);">Posted by Wish</span><span style="background-color: rgb(3, 102, 102);">&nbsp;- Freakybob Team</span></h2>
+
+    <div class="post-content">
+      <p style="text-align: center;">Rebrand of FreakySearch</p>
+      <p>Dear FreakySearch users,</p><p>We are proud to announce the rebrand of FreakySearch to Elvira!</p><p>This decision was made after we decided internally that FreakySearch needed an upgrade.</p><p>Thank you all for your support of FreakySearch, and we hope you enjoy Elvira!</p>
+      <p>From, Wish. &lt;3</p>
+    </div>
+    <audio autoplay="" loop="" src="../audio/test.mp3"></audio>
+    <div class="overlay" id="overlay"></div>
+    
+    <script>
+      // the animation for the sidebaar
+      function toggleMenu() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        if (sidebar.style.left === "0px") {
+          sidebar.style.left = "-500px";
+          overlay.classList.remove("show");
+          sidebar.style.pointerEvents = "none";
+        } else {
+          sidebar.style.left = "0px";
+          overlay.classList.add("show");
+          sidebar.style.pointerEvents = "auto";
+        }
+        overlay.addEventListener("click", () => {
+          toggleMenu();
+        });
+      }
+    </script>
+    
+  
+
+</body></html>
